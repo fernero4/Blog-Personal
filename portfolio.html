@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Web - FH</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+
+   <!--favicon-img--> 
+   <link rel="icon" type="image/png" href="images/favicon.jpg">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+   <!--favicon-img-->
+
+    <link rel="stylesheet" href="css/index.css">
+   
+
+</head>
+<body>
+    <!-- MAIN CONTENT -->
+  
+    <main id="formation-one">
+
+        
+         <!-- CUSTOM CURSOR -->
+         <div class="cursor scale"></div>
+         <div class="cursor-two scale"></div>
+         <!-- CUSTOM CURSOR -->
+
+
+        <div id="preloader">
+            <div class="p">
+                <img src="images/headphone.png" alt="headphone">
+            </div>
+            <div class="p">Use Headphone For Better Experience.</div>
+        </div>
+
+        <div id="formation-one-content">
+                
+            <!-- NAVIGATION -->
+            <div class="navigation">
+                <div class="logo hover ">
+                   <a href="index-two.html" class="text">Fernando Horta</a>
+                </div>
+                <div class="menu-bar hover ">
+                    <div class="menu-bar-name text">
+                        Menu
+                    </div>
+                    <div class="menu-bar-lines text">
+                        <div class="menu-bar-line"></div>
+                        <div class="menu-bar-line"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- NAVIGATION -->
+
+
+<!-- progress-bar -->
+<div class="progress-bar-container fade-in">
+    <div class="progressbar"></div>
+</div>
+<!-- progress-bar -->
+
+
+  
+<div class="scrolling-part">
+      
+</div>
+         
+          
+<div class="heading">
+    <span class="text">
+      Formación
+    </span> 
+ </div>    
+ 
+
+<div class="center">
+  <!-- formation IMG -->
+  <div class="formation-img img">
+    <img class="img-parallax" src="images/yo/3.jpg" alt="formation-img">
+  </div>
+  <!-- formation IMG -->
+</div>
+<div class="center">
+  <div class="about-text">
+    <div class="about-text-heading  text-scroll">
+      <h1>Acerca de mi carrera en Informática</h1>
+      Soy estudiante de <span class="red">Licenciatura en Sistemas</span> en la Universidad Nacional de Entre Ríos, actualmente en el quinto año de la carrera. Con experiencia en el desarrollo y diseño de infraestructuras tecnológicas, me especializo en la implementación de sistemas web y de escritorio.
+    </div>
+    <div class="about-text-content  text-scroll">
+        <i class="fas fa-laptop-code"></i> <b>Desarrollador en la Municipalidad de Concordia:</b> Participo en proyectos usando NestJS, Angular, HTML, CSS, JavaScript, y SQL Server. También colaboro en el mantenimiento de aplicaciones con Visual Basic 6.
+        <br><br>
+        <i class="fas fa-code"></i> <b>Experiencia previa en ISUR:</b> Allí me especialicé en HTML, CSS, JavaScript y PHP, desarrollando habilidades que sigo utilizando en proyectos independientes y colaboraciones profesionales.
+      <br>
+      <h3>Habilidades Técnicas:</h3>
+      <ul>
+          <li><b>Back-End:</b> Django, PHP, NestJS, Java</li>
+          <li><b>Front-End:</b> HTML, CSS, JavaScript, React, Angular</li>
+          <li><b>Bases de Datos:</b> SQL Server, PostgreSQL, SQLite3</li>
+          <li><b>Otros:</b> Visual Basic 6, UML, GitHub, Excel, Visual Studio Code</li>
+      </ul>
+      <br>
+      <i class="fas fa-github"></i> <b>GitHub:</b> Puedes ver algunos de mis proyectos en mi <a href="https://github.com/tu-github" target="_blank">perfil de GitHub</a>.
+    </div>
+    
+   </div>
+</div>
+<section id="gallery-section">
+    <h1 class="center">Galeria</h2>
+    <div id="gallery-container">
+        <div id="gallery-scroll">
+            <div class="gallery-item" onclick="showImage('images/profe-facu/1.jpg')">
+                <img src="images/profe-facu/1.jpg" alt="Image 1">
+            </div>
+            <div class="gallery-item" onclick="showImage('images/profe-facu/2.jpg')">
+                <img src="images/profe-facu/2.jpg" alt="Image 2">
+            </div>
+            <div class="gallery-item" onclick="showImage('images/profe-facu/3.jpg')">
+                <img src="images/profe-facu/3.jpg" alt="Image 3">
+            </div>
+            <div class="gallery-item" onclick="showImage('images/profe-facu/4.jpg')">
+                <img src="images/profe-facu/4.jpg" alt="Image 4">
+            </div>
+
+        </div>
+        <div id="selected-image">
+            <img id="selected-img" src="images/profe-facu/1.jpg" alt="Selected Image">
+        </div>
+    </div>
+</section>
+
+           
+ <!-- HEADPHONE IMG -->
+ <div class="headphone img text">
+  <img src="images/headphone.png" title="headphone zone" class="text" alt="headphone">
+</div>
+ <!-- HEADPHONE IMG -->
+
+ 
+        </div>
+    </div>
+
+
+
+    <!-- NAVIGATION CONTENT -->
+
+    <div class="navigation-content">
+      <div class="navigation-logo hover opacity">
+        <a href="#" class="text">Fernando Horta</a>
+       </div>
+      <ul class="navigation-ul">
+          <li><a href="index-one.html" data-text="Home" data-img="images/lcd/lcd_1.jpg">Home</a></li>
+          <li><a href="formation-one.html"  data-text="formation"  data-img="images/yo/2.jpg">formation</a></li>
+          <li><a href="portfolio.html"  data-text="Formation"  data-img="images/yo/2.jpg">Formation</a></li>
+          <li><a href="songs-one.html" data-text="Songs"  data-img="images/album-thumbnail-nine.jpg">Songs</a></li>
+          <li><a href="blog-one.html"  data-text="Blogs" data-img="images/main-bg-three.jpg">Blogs</a></li>
+          <li><a href="contact-one.html"  data-text="Contact" data-img="images/album-thumbnail-four.jpg">Contact</a></li>
+      </ul>
+      <div class="navigation-close hover formation-close opacity">
+          <div class="navigation-close-line"></div>
+          <div class="navigation-close-line"></div>
+        </div>
+  
+          <div class="project-preview"></div>
+  
+          
+   <!-- HEADPHONE IMG -->
+   <div class="headphone-navigation opacity">
+      <img src="images/headphone.png" title="headphone zone" class="text" alt="headphone">
+    </div>
+     <!-- HEADPHONE IMG -->
+  
+  
+      <!-- SOCIAL MEDIA LINKS -->
+      <div class="social-media-links-navigation">
+          <ul>
+              <li ><a href="#"  class="text hover opacity">YT</a></li>
+              <li ><a href="#"  class="text hover opacity">FB</a></li>
+              <li ><a href="#"  class="text hover opacity">IG</a></li>
+          </ul>
+      </div>
+        <!-- SOCIAL MEDIA LINKS -->
+  
+  </div>
+  
+  <!-- NAVIGATION CONTENT -->
+
+
+
+
+    </main>
+    <!-- MAIN CONTENT -->
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bez.js"></script>
+<script src="js/pace.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>
