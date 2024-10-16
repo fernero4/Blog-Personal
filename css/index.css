@@ -16,7 +16,7 @@
 FOR DESKTOP
 --------
 COMMON
-INDEX-ONE
+index
 ABOUT-ONE
 SONGS-ONE
 BLOG-ONE
@@ -135,10 +135,32 @@ body{
     font-weight: 200;
     font-family: Josefin sans;
     font-weight: bolder;
-    background: url(../images/lcd/lcd_1.jpg); /*HEADER BACKGROUND IMAGE*/
+    position: relative;
+    /* background: url(../images/tango/23.jpg);  */
+    /*HEADER BACKGROUND IMAGE*/
+    /* background-position: center; */
+    /* background-size: cover; */
+}
+
+#header .background-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-position: center;
     background-size: cover;
+    opacity: 0;
+    z-index: 0;
+    transition: opacity 2s ease-in-out; /* Suavidad en la transición */
 }
+
+#header .background-img.active {
+    opacity: 1; 
+    z-index: 1;
+}
+
+
 .navigation{
     width: 100%;
     position: fixed;
@@ -695,7 +717,7 @@ COMMON
  /*====================================
 INDEX ONE
 ====================================*/
-#index-one .new-release{
+#index .new-release{
     height: auto;
     width:230px;
     position: fixed;
@@ -709,34 +731,34 @@ INDEX ONE
     opacity: 0;
 }
 
-#index-one .new-release img{
+#index .new-release img{
     height: auto;
     border-radius: 10px;
     width: 100%;
 }
-#index-one .new-release .song-details{
+#index .new-release .song-details{
 padding: 10px;
 }
 
-#index-one .new-release .song-name{
+#index .new-release .song-name{
 font-size: 14px;
 opacity: .9;
 padding-top: 5px;
 font-family: poppins;
 }
-#index-one .new-release .singer-name{
+#index .new-release .singer-name{
     font-size: 12px;
 opacity: .7;
 font-family: poppins;
 padding-top: 5px;
 }
-#index-one .play-song img{
+#index .play-song img{
     height:24px;
     width:24px;
     cursor:pointer;
 }
 
-#index-one .music-player{
+#index .music-player{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -1018,7 +1040,7 @@ SONGS ONE
     min-height: 100vh;
     width: 100%;
     overflow: hidden;
-    background: url(../images/music-bg.JPG);/*SONGS-ONE BACKGROUND IMAGE*/
+    background: url(../images/lcd/10.jpg);/*SONGS-ONE BACKGROUND IMAGE*/
      background-position: center;
      background-attachment: fixed;
      background-size: cover;
@@ -1702,7 +1724,7 @@ COMMON
     z-index: 2;
 }
 
-#index-one .new-release{
+#index .new-release{
     width:190px;
 }
 #message{
@@ -1808,7 +1830,7 @@ SONGS ONE
     min-height: 100vh;
     width: 100%;
     overflow: hidden;
-    background: url(../images/music-bg.JPG);
+    background: url(../images/lcd/10.jpg);
      background-position: center;
      background-attachment: fixed;
      background-size: cover;

@@ -15,6 +15,7 @@ SONGS PLAYER
 CUSTOM CURSOR
 CIRLE EFFECT
 SLIDER ON SONGS PAGE
+ANIMATION ON INDEX PAGE
 -----------
 ==========
 
@@ -53,7 +54,7 @@ paceOptions = {
 
 
 
-            if(document.querySelector('#index-two') || document.querySelector('#index-one')){
+            if(document.querySelector('#index-two') || document.querySelector('#index')){
                 gsap.to('.new-release',0,{opacity:1})
                 $('.new-release').delay(2000).addClass('opacity');
             }
@@ -74,10 +75,6 @@ paceOptions = {
 
 
                 $('.menu-bar-line').delay(2000).addClass('opacity');
-
-
-              
-
 
 
 //ALL THE ANIMATIONS THAT WILL TAKE PLACE WHILE SCROLLING
@@ -113,10 +110,6 @@ paceOptions = {
           }
     })
    });
-
-
-
-
 
 
    // SCROLL PROGRESS ANIMATION
@@ -171,8 +164,6 @@ $(".navigation-content ul li a").hover(function(e) {
     }
 
 
-
-
    //NAVIGATION CONTENT 
     $(function(){
         $('.menu-bar').on('click',function(){
@@ -185,8 +176,6 @@ $(".navigation-content ul li a").hover(function(e) {
                 gsap.to('.fade-up',1,{backdropFilter:'blur(0px)',delay:1});
             }  
         })
-
-
 
 
         $('.navigation-close').on('click',function(){
@@ -202,9 +191,6 @@ $(".navigation-content ul li a").hover(function(e) {
         })
     })
 
-
-
-      
 
     //SONGS PLAYER 
     window.onload=function(){
@@ -263,7 +249,6 @@ $(".navigation-content ul li a").hover(function(e) {
             }
         })
     }
-
 
           //CUSTOM CURSOR ANIMATION
           $(function(){
@@ -325,10 +310,6 @@ $(".navigation-content ul li a").hover(function(e) {
     
 
 
-
-
-
-
   //SWIPER ON SONGS PAGE
 
   if(document.querySelector('.swiper-container')){
@@ -357,13 +338,50 @@ $(".navigation-content ul li a").hover(function(e) {
       });
   }
 
+  const images = [
+    'images/index/1.jpg',
+    'images/index/2.jpg',
+    'images/index/3.jpg',
+    'images/index/4.jpg',
+    'images/index/5.jpg',
+    'images/index/6.jpg',
+    'images/index/7.jpg',
+    'images/index/8.jpg',
+    'images/index/9.jpg',
+    'images/index/10.jpg',
+    'images/index/11.jpg',
+];
 
+let currentIndex = 0;
+const header = document.getElementById('header');
 
+// Función para cambiar la imagen
+function changeBackground() {
+    const oldImage = document.querySelector('.background-img.active');
+    const newImage = document.createElement('div');
 
-  
- 
+    newImage.classList.add('background-img');
+    newImage.style.backgroundImage = `url(${images[currentIndex]})`;
+    header.appendChild(newImage);
 
+    // Mostrar la nueva imagen
+    setTimeout(() => {
+        newImage.classList.add('active');
+    }, 50); // Pequeña demora para activar la clase
 
+    // Después de la transición, remover la imagen anterior
+    setTimeout(() => {
+        if (oldImage) {
+            oldImage.remove();
+        }
+    }, 2000); // Tiempo de la animación (2s)
 
+    // Actualizar el índice
+    currentIndex = (currentIndex + 1) % images.length;
+}
 
+// Llamar a la función cada 10 segundos
+setInterval(changeBackground, 10000);
 
+// Inicializar la primera imagen
+changeBackground();
