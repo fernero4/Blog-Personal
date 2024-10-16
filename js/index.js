@@ -355,6 +355,25 @@ $(".navigation-content ul li a").hover(function(e) {
 let currentIndex = 0;
 const header = document.getElementById('header');
 
+// Función para precargar las imágenes
+function preloadImages(urls, callback) {
+    let loadedCount = 0;
+    const imageObjects = [];
+
+    urls.forEach((url, index) => {
+        const img = new Image();
+        img.src = url;
+        img.onload = () => {
+            loadedCount++;
+            imageObjects[index] = img;
+            if (loadedCount === urls.length) {
+                callback();  // Todas las imágenes han sido precargadas
+            }
+        };
+    });
+}
+
+
 // Función para cambiar la imagen
 function changeBackground() {
     const oldImage = document.querySelector('.background-img.active');
@@ -380,8 +399,15 @@ function changeBackground() {
     currentIndex = (currentIndex + 1) % images.length;
 }
 
-// Llamar a la función cada 10 segundos
-setInterval(changeBackground, 10000);
+// // Llamar a la función cada 10 segundos
+// setInterval(changeBackground, 10000);
 
-// Inicializar la primera imagen
-changeBackground();
+// // Inicializar la primera imagen
+// changeBackground();
+
+// Precargar imágenes antes de iniciar el ciclo de cambio de fondo
+preloadImages(images, () => {
+    // Una vez que todas las imágenes han sido precargadas, comenzar la animación
+    changeBackground();
+    setInterval(changeBackground, 10000);
+});
