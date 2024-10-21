@@ -61,15 +61,10 @@
 })(jQuery);
 
 
-// (function() {
-//     emailjs.init("6W4lCXbCJOFhk0R0g");
-// })();
-
 // Función para enviar el correo
 document.getElementById('submit').addEventListener('click', function(event) {
     event.preventDefault();
     
-    // Obtener los valores del formulario
     var templateParams = {
         from_name: document.getElementById('name').value,
         email: document.getElementById('email').value,
@@ -77,7 +72,6 @@ document.getElementById('submit').addEventListener('click', function(event) {
         message: document.getElementById('body').value
     };
 
-    // Usar EmailJS para enviar el mensaje
     emailjs.send('service_5yuj7u6', 'template_7xuu4ge', templateParams)
     .then(function(response) {
        console.log('SUCCESS!', response.status, response.text);

@@ -431,7 +431,8 @@ a{
     transition: background .5s cubic-bezier(0.84, 0, 0.08, 0.99);
     top: -100px;
     left: -0px;
-  }
+}
+
 .navigation-logo{
     position: absolute;
     left:5%;
@@ -775,22 +776,6 @@ INDEX ONE
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
  /*====================================
 ABOUT ONE
 ====================================*/
@@ -890,7 +875,16 @@ ABOUT ONE
 FORMATION ONE
 ====================================*/
 
-#formation-content{
+#formation-one{
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    background:#000f11;
+    color: rgb(240,240,240);
+}
+
+#formation-one-content{
     height: auto;
     background: #080808;
     overflow: hidden;
@@ -952,10 +946,11 @@ FORMATION ONE
     font-family: poppins;
     font-weight: 200;
     margin: 20px;
-   opacity: .9;
+    opacity: .9;
     padding: 20px;
     margin-top: 40px;
 }
+
 #formation-one .about-text-content{
     font-size: 22px;
     font-family: poppins;
@@ -965,16 +960,9 @@ FORMATION ONE
     text-align: left;
     opacity: .7;
 }
-#formation-one .signature{
-    font-family: night;
-    text-align: center;
-    padding: 40px;
-    padding-top: 0px;
-    opacity: .9;
-    font-size: 48px;
-}
+
 #gallery-section {
-    background-color: #f0f0f0; /* Light gray background */
+    background-color: #f0f0f0; 
     padding: 20px;
 }
 
@@ -1293,23 +1281,6 @@ opacity: .9;
  /*====================================
 BLOG ONE
 ====================================*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1742,18 +1713,6 @@ COMMON
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
  /*====================================
 ABOUT-ONE
 ====================================*/
@@ -1783,8 +1742,8 @@ ABOUT-ONE
   font-weight: 200;
   margin: 10px;
   margin-bottom: 0px;
- opacity: .9;
- margin-top: 20px;
+  opacity: .9;
+  margin-top: 20px;
   padding: 20px;
 }
 #about-one .about-text-content{
@@ -1972,19 +1931,6 @@ CONTACT-ONE
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
  /*====================================
 BLOG-SINGLE-ONE
 ====================================*/
@@ -2023,46 +1969,14 @@ BLOG-SINGLE-ONE
 ====================================*/
 
 
-
-
-
-
-
-
-
-
-
-
 }
 
 
 
-
-
-
-
-
-
-
-
-/* FOR TABLETS */
-/* FOR TABLETS */
-/* FOR TABLETS */
-/* FOR TABLETS */
-/* FOR TABLETS */
 /* FOR TABLETS */
 
 
-
-
-
-@media all and (max-width: 1100px) and (min-width: 675px){
-
-
-
-
-
-
+@media all and (max-width: 1000px) and (min-width: 675px){
 
 
 
@@ -2090,36 +2004,19 @@ COMMON
 
 
 
-
-
-
-
 /*=======================================================================
 SONGS ONE
 ======================================================================= */
-
-
-    #songs-one #songs-container{
-        display: flex;
+#songs-one #songs-container{
+    display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-        width: 95%;
-    }
+    width: 95%;
+}
 /*=======================================================================
 SONGS ONE
 ======================================================================= */
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -2156,16 +2053,6 @@ BLOG ONE
 /*=======================================================================
 BLOG ONE
 ======================================================================= */
-
-
-
-
-
-
-
-
-
-
 
 
 

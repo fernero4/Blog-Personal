@@ -288,9 +288,6 @@ $(".navigation-content ul li a").hover(function(e) {
                 var circleType = new CircleType(document.getElementById('rotated')).radius(0);
             })
           }
-    
-
-
   //SWIPER ON SONGS PAGE
 
   if(document.querySelector('.swiper-container')){
