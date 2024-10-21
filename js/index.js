@@ -42,9 +42,6 @@ paceOptions = {
         delay:1,
         onComplete: function() {
 
-            //ALL THE ANIMATIONS THAT WILL TAKE PLACE AFTER THE PAGE IS LOADED
-
-
             $('.text').each(function(){
                 $(this).delay(1200).addClass('reveal')
             })
@@ -52,32 +49,20 @@ paceOptions = {
                 $(this).delay(1200).addClass('reveal')
             })
 
-
-
-            if(document.querySelector('#index-two') || document.querySelector('#index')){
+            if(document.querySelector('#index') || document.querySelector('#index')){
                 gsap.to('.new-release',0,{opacity:1})
                 $('.new-release').delay(2000).addClass('opacity');
             }
-
-
 
             if(document.querySelector('.fade-in') ){
                 gsap.to('.fade-in',1,{delay:1,opacity:1,stagger:.4})
             }
 
-
             if(document.querySelector('.opacity-contact')){
-
                 gsap.to('.opacity-contact',1,{delay:1,opacity:1,stagger:.4})
-
             } 
 
-
-
                 $('.menu-bar-line').delay(2000).addClass('opacity');
-
-
-//ALL THE ANIMATIONS THAT WILL TAKE PLACE WHILE SCROLLING
 
 
     $(function () {
@@ -216,8 +201,7 @@ $(".navigation-content ul li a").hover(function(e) {
             
             } 
   
-            //if song is not playing play it and if another song is playing mute the other song
-
+            //if song is not playing play it and if another song is playing mute the other song and play the new song
             //also change the play button image to pause
             else {
 
@@ -297,9 +281,6 @@ $(".navigation-content ul li a").hover(function(e) {
              $('.mouse').hover(cursorhover,cursor);
              
           })
-    
-          
-
 
           //CIRCLE EFFECT ON CONTACT PAGE
           if(document.querySelector('#rotated')){
@@ -399,15 +380,31 @@ function changeBackground() {
     currentIndex = (currentIndex + 1) % images.length;
 }
 
-// // Llamar a la función cada 10 segundos
-// setInterval(changeBackground, 10000);
-
-// // Inicializar la primera imagen
-// changeBackground();
-
 // Precargar imágenes antes de iniciar el ciclo de cambio de fondo
 preloadImages(images, () => {
     // Una vez que todas las imágenes han sido precargadas, comenzar la animación
     changeBackground();
     setInterval(changeBackground, 10000);
 });
+
+function includeHTML() {
+    let elements = document.querySelectorAll("[data-include]");
+    elements.forEach(function(el) {
+        let file = el.getAttribute("data-include");
+        if (file) {
+            fetch(file)
+                .then(response => {
+                    if (!response.ok) throw new Error("Error loading file " + file);
+                    return response.text();
+                })
+                .then(data => {
+                    el.innerHTML = data;
+                    el.removeAttribute("data-include");
+                    includeHTML();
+                })
+                .catch(err => console.log(err));
+        }
+    });
+}
+
+document.addEventListener("DOMContentLoaded", includeHTML);

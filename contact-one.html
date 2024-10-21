@@ -7,15 +7,23 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>
         <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+        <script src="js/jquery.min.js"></script>
+        <script type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+            </script>
+            <script type="text/javascript">
+            (function(){
+                emailjs.init({
+                    publicKey: "6W4lCXbCJOFhk0R0g",
+                });
+            })();
+            </script>
+        <script src="js/jquery.lettering.js"></script>
     
-       <!--favicon-img--> 
-       <link rel="icon" type="image/png" href="images/favicon.jpg">
-       <!--favicon-img-->
-    
+        <link rel="icon" type="image/png" href="images/favicon.jpg">
         <link rel="stylesheet" href="css/index.css">
-       
-    
     </head>
+    
 <body>
     <main id="contact-one">
 
@@ -29,17 +37,15 @@
             <div class="p">
                 <img src="images/headphone.png" alt="headphone">
             </div>
-            <div class="p">Use Headphone For Better Experience.</div>
+            <div class="p">Usa Auriculares para una mejor experiencia..</div>
         </div>
         <!-- PRELOADER -->
-
-
         <div id="contact-one-content">
 
   <!-- NAVIGATION -->
   <div class="navigation">
     <div class="logo hover ">
-       <a href="index-two.html" class="text">Fernando Horta</a>
+       <a href="index.html" class="text">Fernando Horta</a>
     </div>
     <div class="menu-bar hover ">
         <div class="menu-bar-name text">
@@ -53,121 +59,77 @@
 </div>
 <!-- NAVIGATION -->
 
-
-
-
-
-<!-- HEADING -->
 <div class="heading">
     <div class="text">
       CONTACT
     </div>
 </div>
 
-<!-- HEADING -->
-
 
 <div id="flex-row">
 
-<!-- CONTACT FORM -->
-
-<div id="contact-form">
-
-
-    <div id="form" class="opacity-contact">
-
-            <form  id ="myForm" action="#">
-              <div class="input-line">
-                <input id="name" type="text" placeholder="NAME" class="input-same-line" required>
-                <input id="email" type="email" placeholder="EMAIL" class="input-same-line" required>
-              </div>
-              <div class="input-line-column">
-                <input id="subject" type="text" placeholder="SUBJECT" required>
-                <textarea name="textarea" id="body" class="textarea" placeholder="MESSAGE" required></textarea>
-              </div>
-             <button type="button" id="submit" class="hover">Send</button>
-             <div id="message">INVALID EMAIL</div>
-            </form>
-          
-    </div>
-</div>
-
-<!-- CONTACT FORM -->
-
-
-
-<!-- ENQUIRY MAIL -->
-
-<div id="collaboration-mail" class="opacity-contact">
-
-    <div class="circular-text">
-        <span id="rotated">  FOR COLLABORATION * &nbsp;&nbsp;&nbsp;&nbsp; FOR COLLABORATION * &nbsp;&nbsp;&nbsp;&nbsp; FOR COLLABORATION * &nbsp;&nbsp;&nbsp;&nbsp; FOR COLLABORATION * &nbsp;&nbsp;&nbsp;&nbsp; </span>
-    </div>
-    <div class="mail">
-        <a href="mailto:fernanhorta@hotmail.com.ar">fernanhorta@hotmail.com.ar</a>
-    </div>
-</div>
-
-<!-- ENQUIRY MAIL -->
-
-</div>
-
-
-
-
-
-
-
- <!-- HEADPHONE IMG -->
- <div class="headphone img text">
-    <img src="images/headphone.png" title="headphone zone" class="text" alt="headphone">
-  </div>
-   <!-- HEADPHONE IMG -->
-  
-
-
-<!-- progress-bar -->
-<div class="progress-bar-container fade-in">
-    <div class="progressbar"></div>
-</div>
-<!-- progress-bar -->
-
-
-
+    <div id="contact-form">
+        <div id="form" class="opacity-contact">
+                <form  id ="myForm" action="#">
+                <div class="input-line">
+                    <input id="name" type="text" placeholder="NAME" class="input-same-line" required>
+                    <input id="email" type="email" placeholder="EMAIL" class="input-same-line" required>
+                </div>
+                <div class="input-line-column">
+                    <input id="subject" type="text" placeholder="SUBJECT" required>
+                    <textarea name="textarea" id="body" class="textarea" placeholder="MESSAGE" required></textarea>
+                </div>
+                <button type="button" id="submit" class="hover">Send</button>
+                <div id="message">INVALID EMAIL</div>
+                </form>
+            
         </div>
+    </div>
 
 
-        
-    <!-- NAVIGATION CONTENT -->
+    <div id="collaboration-mail" class="opacity-contact">
+        <div class="circular-text">
+            <span id="rotated">  PARA CONTACTAR * &nbsp;&nbsp;&nbsp;&nbsp; PARA CONTACTAR * &nbsp;&nbsp;&nbsp;&nbsp; PARA CONTACTAR * &nbsp;&nbsp;&nbsp;&nbsp; PARA CONTACTAR * &nbsp;&nbsp;&nbsp;&nbsp; </span>
+        </div>
+        <div class="mail">
+            <a href="mailto:fhorta124@gmail.com">fhorta124@gmail.com</a>
+        </div>
+    </div>
+
+</div>
+
+
+    <div class="headphone img text">
+        <img src="images/headphone.png" title="headphone zone" class="text" alt="headphone">
+    </div>
+
+    <div class="progress-bar-container fade-in">
+        <div class="progressbar"></div>
+    </div>
+
+</div>
+
 
     <div class="navigation-content">
         <div class="navigation-logo hover opacity">
             <a href="#" class="text">Fernando Horta</a>
          </div>
         <ul class="navigation-ul">
-            <li><a href="index.html" data-text="Home">Home</a></li>
-            <li><a href="about-one.html"  data-text="About">About</a></li>
-            <li><a href="formation.html"  data-text="Formation">Formation</a></li>
-            <li><a href="songs-one.html" data-text="Songs">Songs</a></li>
+            <li><a href="index.html" data-text="Inicio">Inicio</a></li>
+            <li><a href="about-one.html"  data-text="Acerca">Acerca</a></li>
+            <li><a href="formation.html"  data-text="Formación">Formación</a></li>
+            <li><a href="songs-one.html" data-text="Música">Música</a></li>
             <li><a href="blog-one.html"  data-text="Blogs">Blogs</a></li>
-            <li><a href="contact-one.html"  data-text="Contact">Contact</a></li>
+            <li><a href="contact-one.html"  data-text="Contacto">Contacto</a></li>
         </ul>
         <div class="navigation-close hover about-close opacity">
             <div class="navigation-close-line"></div>
             <div class="navigation-close-line"></div>
           </div>
-    
-            <div class="project-preview"></div>
-    
-            
-     <!-- HEADPHONE IMG -->
+            <div class="project-preview"></div> 
      <div class="headphone-navigation opacity">
         <img src="images/headphone.png" title="headphone zone" class="text" alt="headphone">
       </div>
-       <!-- HEADPHONE IMG -->
-    
-    
-        <!-- SOCIAL MEDIA LINKS -->
         <div class="social-media-links-navigation">
             <ul>
                 <li ><a href="https://github.com/fernero4"  class="text hover opacity">GIT</a></li>
@@ -175,17 +137,8 @@
                 <li ><a href="https://www.instagram.com/fernanh0rta/"  class="text hover opacity">IG</a></li>
             </ul>
         </div>
-          <!-- SOCIAL MEDIA LINKS -->
-    
     </div>
-    
-    <!-- NAVIGATION CONTENT -->
-
-
-
-
         </main>
-
         <script src="js/jquery.min.js"></script>
         <script src="js/circletype.min.js"></script>
         <script src="js/jquery.lettering.js"></script>

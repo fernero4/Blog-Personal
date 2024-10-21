@@ -26,32 +26,21 @@
 		}
 	}
 
-
 	var methods = {
 		init : function() {
-
 			return this.each(function() {
 				injector($(this), '', 'char', '');
 			});
-
 		},
-
 		words : function() {
-
 			return this.each(function() {
 				injector($(this), ' ', 'word', ' ');
 			});
-
 		},
 
 		lines : function() {
-
 			return this.each(function() {
 				var r = "eefec303079ad17405c889e092e105b0";
-				// Because it's hard to split a <br/> tag consistently across browsers,
-				// (*ahem* IE *ahem*), we replace all <br/> instances with an md5 hash
-				// (of the word "split").  If you're trying to use this plugin on that
-				// md5 hash string, it will fail because you're being ridiculous.
 				injector($(this).children("br").replaceWith(r).end(), r, 'line', '');
 			});
 
@@ -70,3 +59,34 @@
 	};
 
 })(jQuery);
+
+
+// (function() {
+//     emailjs.init("6W4lCXbCJOFhk0R0g");
+// })();
+
+// Función para enviar el correo
+document.getElementById('submit').addEventListener('click', function(event) {
+    event.preventDefault();
+    
+    // Obtener los valores del formulario
+    var templateParams = {
+        from_name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        subject: document.getElementById('subject').value,
+        message: document.getElementById('body').value
+    };
+
+    // Usar EmailJS para enviar el mensaje
+    emailjs.send('service_5yuj7u6', 'template_7xuu4ge', templateParams)
+    .then(function(response) {
+       console.log('SUCCESS!', response.status, response.text);
+       alert('Mensaje enviado correctamente');
+    }, function(error) {
+       console.log('FAILED...', error);
+       alert('Error al enviar el mensaje');
+    });
+});
+
+
+
