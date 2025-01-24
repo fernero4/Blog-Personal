@@ -405,3 +405,36 @@ function includeHTML() {
 }
 
 document.addEventListener("DOMContentLoaded", includeHTML);
+
+
+//ANIMATION ON BLOG-SINGLE
+// Cambiar entre pestañas
+function switchTab(tab) {
+    document.querySelectorAll('.tab').forEach((el) => el.classList.remove('active'));
+    document.querySelectorAll('.tab-content').forEach((el) => el.classList.remove('active'));
+    document.getElementById(tab + '-section').classList.add('active');
+    document.querySelector('.tab[onclick="switchTab(\'' + tab + '\')"]').classList.add('active');
+}
+
+// Mostrar imagen o video seleccionado
+function showMedia(src, type) {
+    const img = document.getElementById('selected-img');
+    const video = document.getElementById('selected-video');
+
+    // Ocultar o mostrar el elemento correspondiente
+    if (type === 'image') {
+        img.src = src;
+        img.style.display = 'block';
+        video.style.display = 'none';
+
+        // Pausar el video si está reproduciéndose
+        video.pause();
+    } else if (type === 'video') {
+        video.src = src;
+        video.style.display = 'block';
+        img.style.display = 'none';
+
+        // Iniciar el video si se selecciona un video
+        video.play();
+    }
+}

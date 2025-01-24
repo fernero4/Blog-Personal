@@ -8,9 +8,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="images/favicon.jpg">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="css/index.css">
-    
+    <style>
+        img {
+            loading: lazy;
+        }
+    </style>
 </head>
 <body>    
     <main id="formation-one">
@@ -55,7 +58,7 @@
             
             <div class="center">
                 <div class="formation-img img">
-                    <img class="img-parallax" src="images/yo/3.jpg" alt="formation-img">
+                    <img class="img-parallax" src="images/yo/3.jpg" alt="formation-img" style="width: 50%; height: auto; object-fit: cover;">
                 </div>
             </div>
 
@@ -186,6 +189,29 @@
         </div>
     </div>
 </main>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const cards = document.querySelectorAll('.card');
+        const contentArea = document.getElementById('content-area');
+
+        cards.forEach(card => {
+            card.addEventListener('click', function() {
+                const cardName = this.getAttribute('data-name');
+                loadContent(cardName);
+            });
+        });
+
+        function loadContent(name) {
+            fetch(`content/${name}.html`) // Assuming content files are stored in a 'content' directory
+                .then(response => response.text())
+                .then(data => {
+                    contentArea.innerHTML = data;
+                })
+                .catch(error => console.error('Error loading content:', error));
+        }
+    });
+</script>
 
 <script src="js/jquery.min.js"></script>
 <script src="js/bez.js"></script>
