@@ -317,17 +317,17 @@ $(".navigation-content ul li a").hover(function(e) {
   }
 
   const images = [
-    'images/index/1.jpg',
-    'images/index/2.jpg',
-    'images/index/3.jpg',
-    'images/index/4.jpg',
-    'images/index/5.jpg',
-    'images/index/6.jpg',
-    'images/index/7.jpg',
-    'images/index/8.jpg',
-    'images/index/9.jpg',
-    'images/index/10.jpg',
-    'images/index/11.jpg',
+    'https://res.cloudinary.com/dcu2pmo3u/image/upload/v1738179036/index11.jpg',    
+    'https://res.cloudinary.com/dcu2pmo3u/image/upload/v1738179036/index1.jpg',
+    'https://res.cloudinary.com/dcu2pmo3u/image/upload/v1738179036/index2.jpg',
+    'https://res.cloudinary.com/dcu2pmo3u/image/upload/v1738179036/index3.jpg',
+    'https://res.cloudinary.com/dcu2pmo3u/image/upload/v1738179036/index4.jpg',
+    'https://res.cloudinary.com/dcu2pmo3u/image/upload/v1738179036/index5.jpg',
+    'https://res.cloudinary.com/dcu2pmo3u/image/upload/v1738179036/index6.jpg',
+    'https://res.cloudinary.com/dcu2pmo3u/image/upload/v1738179036/index7.jpg',
+    'https://res.cloudinary.com/dcu2pmo3u/image/upload/v1738179036/index8.jpg',
+    'https://res.cloudinary.com/dcu2pmo3u/image/upload/v1738179036/index9.jpg',
+    'https://res.cloudinary.com/dcu2pmo3u/image/upload/v1738179036/index10.jpg',
 ];
 
 let currentIndex = 0;
@@ -416,6 +416,10 @@ function switchTab(tab) {
     document.querySelector('.tab[onclick="switchTab(\'' + tab + '\')"]').classList.add('active');
 }
 
+function showVideo(element, videoUrl) {
+    element.innerHTML = `<iframe src="${videoUrl}" frameborder="0" allowfullscreen width="100%" height="300"></iframe>`;
+}
+
 // Mostrar imagen o video seleccionado
 function showMedia(src, type) {
     const img = document.getElementById('selected-img');
@@ -426,15 +430,18 @@ function showMedia(src, type) {
         img.src = src;
         img.style.display = 'block';
         video.style.display = 'none';
-
+        video.src = ''; 
         // Pausar el video si está reproduciéndose
-        video.pause();
+        // video.pause();
     } else if (type === 'video') {
-        video.src = src;
+        video.src = `https://www.youtube.com/embed/${src}?autoplay=1`;
         video.style.display = 'block';
         img.style.display = 'none';
+        // video.src = src;
+        // video.style.display = 'block';
+        // img.style.display = 'none';
 
         // Iniciar el video si se selecciona un video
-        video.play();
+        // video.play();
     }
 }
