@@ -445,3 +445,77 @@ function showMedia(src, type) {
         // video.play();
     }
 }
+
+const songs = [
+    { title: "Mi Realidad", artist: "LCD", src: "music/mi realidad.mp3", cover: "https://res.cloudinary.com/dcu2pmo3u/image/upload/v1738179039/lcd8.jpg" },
+    { title: "Nada de lamentos ni perdón", artist: "LCD", src: "music/lamentos ni perdon.mp3", cover: "https://res.cloudinary.com/dcu2pmo3u/image/upload/v1738179039/lcd9.jpg" },
+    { title: "No me rendiré", artist: "LCD", src: "music/no me rendire ensayo.mp3", cover: "https://res.cloudinary.com/dcu2pmo3u/image/upload/v1738179039/lcd5.jpg" },
+    { title: "Trotamundos", artist: "LCD", src: "music/Trotamundos.mp3", cover: "https://res.cloudinary.com/dcu2pmo3u/image/upload/v1738179039/lcd10.jpg" },
+    { title: 'No se cuando va a llover', artist: "FH", src: "music/No se cuando va a llover.mp3", cover: "https://res.cloudinary.com/dcu2pmo3u/image/upload/v1738179039/lcd1.jpg" },
+    { title: 'Pensando en voce', artist: "FH", src: "music/Pensando en voce.mp3", cover: "https://res.cloudinary.com/dcu2pmo3u/image/upload/v1738179039/lcd2.jpg" },
+    { title: 'Mi bien amada', artist: "Guitarras del alba", src: "music/Mi bien amada.mp3", cover: "https://res.cloudinary.com/dcu2pmo3u/image/upload/v1738179039/lcd3.jpg" },
+    { title: 'El Hornerito', artist: "Guitarras del alba", src: "music/El Hornerito.mp3", cover: "https://res.cloudinary.com/dcu2pmo3u/image/upload/v1738179039/lcd4.jpg" },
+    { title: "Novo Horizonte", artist: "Guitarras del alba", src: "music/Novo Horizonte.mp3", cover: "https://res.cloudinary.com/dcu2pmo3u/image/upload/v1738179039/lcd6.jpg" },
+    
+];
+
+let currentSongIndex = 0;
+const audioPlayer = document.getElementById("audio-player");
+const playPauseBtn = document.getElementById("play-pause-btn");
+const prevBtn = document.getElementById("prev-btn");
+const nextBtn = document.getElementById("next-btn");
+const progressBar = document.getElementById("progress-bar");
+const playerSong = document.getElementById("player-song");
+const playerArtist = document.getElementById("player-artist");
+const playerCover = document.getElementById("player-cover");
+
+// Cargar canción
+function loadSong(index) {
+    const song = songs[index];
+    audioPlayer.src = song.src;
+    playerSong.textContent = song.title;
+    playerArtist.textContent = song.artist;
+    playerCover.src = song.cover;
+}
+
+// Reproducir o pausar canción
+function togglePlayPause() {
+    if (audioPlayer.paused) {
+        audioPlayer.play();
+        playPauseBtn.textContent = "⏸";
+    } else {
+        audioPlayer.pause();
+        playPauseBtn.textContent = "▶️";
+    }
+}
+
+// Avanzar o retroceder canciones
+function nextSong() {
+    currentSongIndex = (currentSongIndex + 1) % songs.length;
+    loadSong(currentSongIndex);
+    audioPlayer.play();
+}
+
+function prevSong() {
+    currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
+    loadSong(currentSongIndex);
+    audioPlayer.play();
+}
+
+// Actualizar barra de progreso
+audioPlayer.addEventListener("timeupdate", () => {
+    progressBar.value = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+});
+
+progressBar.addEventListener("input", () => {
+    audioPlayer.currentTime = (progressBar.value / 100) * audioPlayer.duration;
+});
+
+// Eventos
+playPauseBtn.addEventListener("click", togglePlayPause);
+nextBtn.addEventListener("click", nextSong);
+prevBtn.addEventListener("click", prevSong);
+
+// Cargar primera canción
+loadSong(currentSongIndex);
+
