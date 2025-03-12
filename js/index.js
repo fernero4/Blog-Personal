@@ -142,12 +142,6 @@ $(".navigation-content ul li a").hover(function(e) {
       $('.navigation-content').on('mousemove',cursormover);
   })
 
-   //GALLERY IMAGE SELECTOR
-   function showImage(src) {
-        const selectedImg = document.getElementById('selected-img');
-        selectedImg.src = src;
-    }
-
 
    //NAVIGATION CONTENT 
     $(function(){
@@ -416,35 +410,32 @@ function switchTab(tab) {
     document.querySelector('.tab[onclick="switchTab(\'' + tab + '\')"]').classList.add('active');
 }
 
-function showVideo(element, videoUrl) {
-    element.innerHTML = `<iframe src="${videoUrl}" frameborder="0" allowfullscreen width="100%" height="300"></iframe>`;
-}
-
 // Mostrar imagen o video seleccionado
 function showMedia(src, type) {
-    const img = document.getElementById('selected-img');
-    const video = document.getElementById('selected-video');
+    const selectedContainer = document.getElementById('selected-image');
+    selectedContainer.innerHTML = ''; // Limpiar contenido previo
 
-    // Ocultar o mostrar el elemento correspondiente
     if (type === 'image') {
-        img.src = src;
-        img.style.display = 'block';
-        video.style.display = 'none';
-        video.src = ''; 
-        // Pausar el video si está reproduciéndose
-        // video.pause();
+        const newImg = document.createElement('img');
+        newImg.src = src;
+        newImg.alt = 'Selected Image';
+        newImg.style.width = '100%';
+        selectedContainer.appendChild(newImg);
     } else if (type === 'video') {
-        video.src = `https://www.youtube.com/embed/${src}?autoplay=1`;
-        video.style.display = 'block';
-        img.style.display = 'none';
-        // video.src = src;
-        // video.style.display = 'block';
-        // img.style.display = 'none';
+        const newVideo = document.createElement('video');
+        newVideo.controls = true;
+        newVideo.autoplay = true;
+        newVideo.style.width = '100%';
 
-        // Iniciar el video si se selecciona un video
-        // video.play();
+        const source = document.createElement('source');
+        source.src = src;
+        source.type = 'video/mp4';
+
+        newVideo.appendChild(source);
+        selectedContainer.appendChild(newVideo);
     }
 }
+
 
 const songs = [
     { title: "Mi Realidad", artist: "LCD", src: "music/mi realidad.mp3", cover: "https://res.cloudinary.com/dcu2pmo3u/image/upload/v1738179039/lcd8.jpg" },
@@ -452,6 +443,7 @@ const songs = [
     { title: "No me rendiré", artist: "LCD", src: "music/no me rendire ensayo.mp3", cover: "https://res.cloudinary.com/dcu2pmo3u/image/upload/v1738179039/lcd5.jpg" },
     { title: "Trotamundos", artist: "LCD", src: "music/Trotamundos.mp3", cover: "https://res.cloudinary.com/dcu2pmo3u/image/upload/v1738179039/lcd10.jpg" },
     { title: 'No se cuando va a llover', artist: "FH", src: "music/No se cuando va a llover.mp3", cover: "https://res.cloudinary.com/dcu2pmo3u/image/upload/v1738179039/lcd1.jpg" },
+    { title: 'No hay otra manera', artist: "FH", src: "music/no hay otra manera.mp3", cover: "https://res.cloudinary.com/dcu2pmo3u/image/upload/v1738179039/lcd8.jpg" },
     { title: 'Pensando en voce', artist: "FH", src: "music/Pensando en voce.mp3", cover: "https://res.cloudinary.com/dcu2pmo3u/image/upload/v1738179039/lcd2.jpg" },
     { title: 'Mi bien amada', artist: "Guitarras del alba", src: "music/Mi bien amada.mp3", cover: "https://res.cloudinary.com/dcu2pmo3u/image/upload/v1738179039/lcd3.jpg" },
     { title: 'El Hornerito', artist: "Guitarras del alba", src: "music/El Hornerito.mp3", cover: "https://res.cloudinary.com/dcu2pmo3u/image/upload/v1738179039/lcd4.jpg" },
